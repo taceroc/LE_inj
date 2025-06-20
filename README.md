@@ -37,5 +37,7 @@ source $STACKCVMFS/$LSST_STACK_VERSION/loadLSST-ext.bash
 setup lsst_distrib
 ```
 
-This saves the numpy array of the two injected images and the difference, and also a .jpg image with the three images.
+This saves the numpy array of the two injected images and their difference, and also a .jpg image with the three images.
+
+![Example](images/4026_15_r/2ndplane_closer/loc[2, 1.3, 1, -32.6156]_dz0.06_w567_angle[100, 220]_sourced52000.0pc/4_200_690-690.png)
 
