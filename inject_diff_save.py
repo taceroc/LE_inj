@@ -222,7 +222,7 @@ injected_coadd_1st = do_injections(coadd, [*my_injection_catalog_LEs, my_injecti
 
 ids_to_use_time = 4
 # ----- select fits for 2nd image
-list_fits = [sorted(glob.glob("fits/4026_15/*52000.0pc.fits"))]
+list_fits = [sorted(glob.glob("fits/4026_15/2ndplane_closer_otherarc/*52000.0pc.fits"))]
 my_injection_catalog_LEs = []
 for llix in list_fits:
     my_injection_catalog_LEsix, second_ct, _, coadd, _, _, _, _, _ = generate_injection(llix, ids_to_use_time, ids_to_use_time_fits = 3)
@@ -324,14 +324,14 @@ path_name_ids = f"{coadd_to_use[ids_to_use_time].dataId['tract']}_{coadd_to_use[
 path_name = 'loc'+list_fits[-1][-1].split('loc')[1].replace('.fits', '')
 
 os.makedirs(f"numpy/{path_name_ids}", exist_ok=True)
-os.makedirs(f"numpy/{path_name_ids}/2ndplane_closer/{path_name}", exist_ok=True)
+os.makedirs(f"numpy/{path_name_ids}/2ndplane_closer_otherarc/{path_name}", exist_ok=True)
 
-path_to_numpy = f"numpy/{path_name_ids}/2ndplane_closer/{path_name}"
+path_to_numpy = f"numpy/{path_name_ids}/2ndplane_closer_otherarc/{path_name}"
 
 os.makedirs(f"images/{path_name_ids}", exist_ok=True)
-os.makedirs(f"images/{path_name_ids}/2ndplane_closer/{path_name}", exist_ok=True)
+os.makedirs(f"images/{path_name_ids}/2ndplane_closer_otherarc/{path_name}", exist_ok=True)
 
-path_to_images = f"images/{path_name_ids}/2ndplane_closer/{path_name}"
+path_to_images = f"images/{path_name_ids}/2ndplane_closer_otherarc/{path_name}"
 
 numpy_cutouts = {}
 for row in my_injection_catalog_LEs[-1]:
