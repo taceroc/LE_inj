@@ -1,0 +1,23 @@
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
+# IPython
+profile_default/
+ipython_config.py
+
+
+__pycache__/
+
+*.out
+*.fits
+
+# *.ipynb
+
+__pycache__/
+lightecho_modeling_oop/*
+u/*
+Runs2.2i/*
+fits/*
+numpy/*
+images/*
+logs/*
+old/*

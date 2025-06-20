@@ -1,0 +1,2 @@
+path_to_fits = {}
+path_to_fits['path'] = "pscratch/sd/t/taceroc/LE_inj/lightecho_modeling_oop/OOP/results/LC_infplane_test_multi/arrays/surface_valuesInfPlane_dt0_loop_ct165_loc[0.3, -1.3, 1, -32.6156]_dz0.06_w473_angle[100, 200].npy"

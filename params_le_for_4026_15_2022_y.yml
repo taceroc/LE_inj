@@ -1,0 +1,82 @@
+
+# ring
+0:
+  Flmax: 1.0e+16
+  angles:
+  - 100
+  - 220
+  ct: 290
+  d: 52000
+  dt0: 0
+  dz0: 0.06
+  plane_coefficients:
+  - 0.9
+  - 1.3
+  - 1
+  - 8
+  wave: 0.5670
+
+1:
+  Flmax: 1.0e+16
+  angles:
+  - 100
+  - 220
+  ct: 365
+  d: 52000
+  dt0: 0
+  dz0: 0.06
+  plane_coefficients:
+  - 0.9
+  - 1.3
+  - 1
+  - 8
+  wave: 0.5670
+
+2:
+  Flmax: 1.0e+16
+  angles:
+  - 100
+  - 220
+  ct: 600
+  d: 52000
+  dt0: 0
+  dz0: 0.06
+  plane_coefficients:
+  - 0.9
+  - 1.3
+  - 1
+  - 8
+  wave: 0.5670
+
+3:
+  Flmax: 1.0e+16
+  angles:
+  - 100
+  - 220
+  ct: 690
+  d: 52000
+  dt0: 0
+  dz0: 0.06
+  plane_coefficients:
+  - 0.9
+  - 1.3
+  - 1
+  - 8
+  wave: 0.5670
+
+4:
+  Flmax: 1.0e+16
+  angles:
+  - 100
+  - 220
+  ct: 800
+  d: 52000
+  dt0: 0
+  dz0: 0.06
+  plane_coefficients:
+  - 0.9
+  - 1.3
+  - 1
+  - 8
+  wave: 0.5670
+

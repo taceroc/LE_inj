@@ -1,0 +1,46 @@
+0:
+  Flmax: 1.0e+16
+  angles:
+  - 0
+  - 360
+  ct: 750
+  d: 52000
+  dt0: 100
+  dz0: 0.06
+  plane_coefficients:
+  - 2
+  - 1.3
+  - 1
+  - 60
+  wave: 0.6732
+  
+1:
+  Flmax: 1.0e+16
+  angles:
+  - 0
+  - 360
+  ct: 800
+  d: 52000
+  dt0: 100
+  dz0: 0.06
+  plane_coefficients:
+  - 2
+  - 1.3
+  - 1
+  - 60
+  wave: 0.6732
+2:
+  Flmax: 1.0e+16
+  angles:
+  - 0
+  - 360
+  ct: 850
+  d: 52000
+  dt0: 100
+  dz0: 0.06
+  plane_coefficients:
+  - 2
+  - 1.3
+  - 1
+  - 60
+  wave: 0.6732
