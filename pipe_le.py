@@ -99,24 +99,46 @@ if __name__ == '__main__':
     with open(ins.txtparameters, 'r') as f:
         valuesYaml = yaml.safe_load(f)
 
-    if ~os.path.exists(ins.loc_to_fits):
-        os.mkdir(ins.loc_to_fits)
+    # if os.path.exists(ins.loc_to_fits):
+    #     print(f"{ins.loc_to_fits} exists")
+    # else:
+    #     os.mkdir(ins.loc_to_fits)
 
-    # worker_count = 2
-    list_id = np.arange(len(valuesYaml))
-    tasks = [(i, ins) for i in list_id]
+    worker_count = 2
+    # list_id = np.arange(len(valuesYaml))
+    # tasks = [(i, ins) for i in list_id]
+    tasks = [(i, ins) for i in valuesYaml]
+    
     
     def command_to_run(ids, ins):
         run_le = ['python', 'lightecho_modeling_oop/OOP/main.py', f'{ins.funcsim}', '-file_to_parameters', f'{ins.txtparameters}', '-id', f"{ids}", f'{bool_save}', f'{bool_show_plots}', f'{bool_show_initial_object}']
 
         subprocess.call(run_le)
+
+        
+        with open(ins.txtparameters, 'r') as f:
+            valuesYaml = yaml.safe_load(f)
+        parameters = valuesYaml[int(ids)]
+        if parameters['loc_to_fits'] != '':
+            loc_to_fits_complete = os.path.join(ins.loc_to_fits, parameters['loc_to_fits'])
+            ins.loc_to_fits = loc_to_fits_complete
+            if os.path.exists(loc_to_fits_complete):
+                print(f"{loc_to_fits_complete} exists")
+            else:
+                os.mkdir(loc_to_fits_complete)
+        else:
+            if os.path.exists(ins.loc_to_fits):
+              print(f"{ins.loc_to_fits} exists")
+            else:
+                os.mkdir(ins.loc_to_fits)
+        
         create_fits.main(ins)
 
     def worker(args):
         """Unpacks arguments for multiprocessing."""
         return command_to_run(*args)
         
-    with multiprocessing.Pool(processes=len(valuesYaml)) as pool:
+    with multiprocessing.Pool(processes=2) as pool:
         results = pool.map(worker, tasks)
 
         

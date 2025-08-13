@@ -1,4 +1,4 @@
-import pandas as pd
+ import pandas as pd
 import os
 
 import numpy as np
@@ -90,7 +90,6 @@ for i in range(6, len(dates_calexps_ym)-1):
                                                   inputs=[collections_step1step2], 
                                                   output=my_outputCollection)
 
-
     yaml_file = '$DRP_PIPE_DIR/pipelines/LSSTCam-imSim/DRP-test-med-1.yaml'
     steps = 'makeWarp,selectDeepCoaddVisits,assembleCoadd,detection,mergeDetections,deblend,measure'
     my_uri = yaml_file + '#' + steps
@@ -101,11 +100,9 @@ for i in range(6, len(dates_calexps_ym)-1):
     queryString = f"visit in {my_visits_tupleString} AND skymap = 'DC2'"
     print(queryString)
 
-
     spe = SimplePipelineExecutor.from_pipeline(assembleCoaddPipeline, 
                                            where=queryString, 
                                            butler=simpleButler)
-
 
     quanta = spe.run()
 
