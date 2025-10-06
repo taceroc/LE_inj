@@ -1,2 +1,2 @@
-- path_to_surface_values: /pscratch/sd/t/taceroc/LE_inj/lightecho_modeling_oop/OOP/results/LC_infplane_test_multi/arrays/surface_valueslc2_InfPlane_dt0_loop_ct640_loc[0,
-    0, 1, -391.38719999999995]_dz0.06_w567_angle[0, 360]_sourced52000.0pc.npy
+- path_to_surface_values: /pscratch/sd/t/taceroc/LE_inj/lightecho_modeling_oop/OOP/results/sn2011fe_new_interpolation/arrays/surface_valueslc2_InfPlane_dt0_loop_ct500_loc[0,
+    0, 1, -163.078]_dz0.06_w567_angle[30, -90]_sourced52000.0pc.npy

@@ -3,6 +3,42 @@
   angles:
   - 0
   - 360
+  ct: 500
+  d: 52000
+  dt0: 0
+  dz0: 0.06
+  plane_coefficients:
+  - 0
+  - 0
+  - 1
+  - 12
+  wave: 0.5670
+  loc_to_fits: '4026_15_v2/plane'
+  composition: 'both'
+
+1:
+  Flmax: 1.0e+16
+  angles:
+  - 0
+  - 360
+  ct: 640
+  d: 52000
+  dt0: 0
+  dz0: 0.06
+  plane_coefficients:
+  - 0.1
+  - -0.5
+  - 1
+  - 120
+  wave: 0.5670
+  loc_to_fits: '4026_15_v2/plane'
+  composition: 'both'
+
+2:
+  Flmax: 1.0e+16
+  angles:
+  - 0
+  - 360
   ct: 640
   d: 52000
   dt0: 0
@@ -14,23 +50,7 @@
   - 120
   wave: 0.5670
   loc_to_fits: '4026_15_v2/plane'
-
-1:
-  Flmax: 1.0e+16
-  angles:
-  - 0
-  - 360
-  ct: 690
-  d: 52000
-  dt0: 0
-  dz0: 0.06
-  plane_coefficients:
-  - 0
-  - 0
-  - 1
-  - 120
-  wave: 0.5670
-  loc_to_fits: '4026_15_v2/plane'
+  composition: 'both'
 
 # 2:
 #   Flmax: 1.0e+16

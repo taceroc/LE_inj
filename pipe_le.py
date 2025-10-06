@@ -11,6 +11,9 @@ from argparse import FileType, ArgumentParser
 
 import create_fits
 
+sys.path.append("lightecho_modeling_oop/OOP/")
+import main as main_le
+
 prog_name = 'LESimulations plus FITS creation'
 description = '''Simulate some LE images and generate fits file'''
 prog = 'pipe_le.py'
@@ -34,9 +37,9 @@ pred_files.add_argument(
 pred_files.add_argument(
     '-file_to_parameters',
     metavar='PARAMETERS',
-    dest='txtparameters',
+    dest='file_to_parameters',
     required=True,
-    help='txt containing a dict with the mandatory parameters for each type simulation',
+    help='yaml containing a dict with the mandatory parameters for each type simulation',
     type=str)
 pred_files.add_argument(
     '--bool_save',
@@ -65,11 +68,7 @@ pred_files.add_argument(
     required=True,
     help='file to yaml file with path to surface values',
     type=str)
-# pred_files.add_argument(
-#     '-loc_to_values',
-#     dest='loc_to_values',
-#     help='dir to simulations results',
-#     type=str)
+
 pred_files.add_argument(
     '-loc_to_fits',
     dest='loc_to_fits',
@@ -96,7 +95,7 @@ if __name__ == '__main__':
     else:
         bool_save = '--no-bool_save'
 
-    with open(ins.txtparameters, 'r') as f:
+    with open(ins.file_to_parameters, 'r') as f:
         valuesYaml = yaml.safe_load(f)
 
     # if os.path.exists(ins.loc_to_fits):
@@ -111,21 +110,24 @@ if __name__ == '__main__':
     
     
     def command_to_run(ids, ins):
-        run_le = ['python', 'lightecho_modeling_oop/OOP/main.py', f'{ins.funcsim}', '-file_to_parameters', f'{ins.txtparameters}', '-id', f"{ids}", f'{bool_save}', f'{bool_show_plots}', f'{bool_show_initial_object}']
-
-        subprocess.call(run_le)
-
+        # run_le = ['python', 'lightecho_modeling_oop/OOP/main.py', f'{ins.funcsim}', '-file_to_parameters', f'{ins.file_to_parameters}', '-id', f"{ids}", f'{bool_save}', f'{bool_show_plots}']
         
-        with open(ins.txtparameters, 'r') as f:
+        # subprocess.call(run_le)
+
+        main_le.main(ins, ids)
+        
+        with open(ins.file_to_parameters, 'r') as f:
             valuesYaml = yaml.safe_load(f)
         parameters = valuesYaml[int(ids)]
         if parameters['loc_to_fits'] != '':
-            loc_to_fits_complete = os.path.join(ins.loc_to_fits, parameters['loc_to_fits'])
+            loc_to_fits_complete = os.path.join(ins.loc_to_fits, parameters['loc_to_fits']) #root, dir
             ins.loc_to_fits = loc_to_fits_complete
-            if os.path.exists(loc_to_fits_complete):
-                print(f"{loc_to_fits_complete} exists")
-            else:
-                os.mkdir(loc_to_fits_complete)
+            # if os.path.exists(loc_to_fits_complete):
+            #     print(f"{loc_to_fits_complete} exists")
+            # else:
+            #     os.mkdir(loc_to_fits_complete)
+
+            os.makedirs(loc_to_fits_complete, exist_ok=True)
         else:
             if os.path.exists(ins.loc_to_fits):
               print(f"{ins.loc_to_fits} exists")
@@ -145,7 +147,7 @@ if __name__ == '__main__':
 
     
         
-#### python pipe_le.py SimulateLEInfPlane -file_to_parameters /pscratch/sd/t/taceroc/LE_inj/params_le.yml --bool_save --bool_show_plots --no-bool_show_initial_object -file_to_parameters_surface /pscratch/sd/t/taceroc/LE_inj/name_surface.yml -loc_to_fits /pscratch/sd/t/taceroc/LE_inj/fits
+#### python pipe_le.py SimulateLEInfPlane -file_to_parameters /pscratch/sd/t/taceroc/LE_inj/params_le.yml --bool_save --bool_show_plots -file_to_parameters_surface /pscratch/sd/t/taceroc/LE_inj/name_surface.yml -loc_to_fits /pscratch/sd/t/taceroc/LE_inj/fits
 
 #### python pipe_le.py SimulateLEInfPlane -file_to_parameters /pscratch/sd/t/taceroc/LE_inj/params_le_for_4026_15_2022_y.yml --bool_save --no-bool_show_plots --no-bool_show_initial_object -file_to_parameters_surface /pscratch/sd/t/taceroc/LE_inj/name_surface.yml -loc_to_fits /pscratch/sd/t/taceroc/LE_inj/fits/4026_15
 

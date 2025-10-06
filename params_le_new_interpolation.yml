@@ -1,0 +1,156 @@
+0:
+  Flmax: 0
+  angles:
+  - 30
+  - 120
+  ct: 550
+  d: 52000
+  dt0: 0
+  dz0: 0.06
+  plane_coefficients:
+  - 0
+  - 0
+  - 1
+  - 12
+  wave: 0.5670
+  loc_to_fits: 'new_interpolation/plane'
+  composition: 'both'
+
+1:
+  Flmax: 0
+  angles:
+  - 0
+  - 360
+  ct: 550
+  d: 52000
+  dt0: 0
+  dz0: 0.06
+  plane_coefficients:
+  - 0.1
+  - -0.05
+  - 1
+  - 12
+  wave: 0.5670
+  loc_to_fits: 'new_interpolation/plane'
+  composition: 'both'
+
+2:
+  Flmax: 0
+  angles:
+  - 30
+  - -90
+  ct: 550
+  d: 52000
+  dt0: 0
+  dz0: 0.06
+  plane_coefficients:
+  - 0
+  - 0
+  - 1
+  - 50
+  wave: 0.5670
+  loc_to_fits: 'new_interpolation/plane'
+  composition: 'both'
+
+3:
+  Flmax: 0
+  angles:
+  - 30
+  - 120
+  ct: 500
+  d: 52000
+  dt0: 0
+  dz0: 0.06
+  plane_coefficients:
+  - 0
+  - 0
+  - 1
+  - 12
+  wave: 0.5670
+  loc_to_fits: 'new_interpolation/plane'
+  composition: 'both'
+
+4:
+  Flmax: 0
+  angles:
+  - 0
+  - 360
+  ct: 500
+  d: 52000
+  dt0: 0
+  dz0: 0.06
+  plane_coefficients:
+  - 0.1
+  - -0.05
+  - 1
+  - 12
+  wave: 0.5670
+  loc_to_fits: 'new_interpolation/plane'
+  composition: 'both'
+
+5:
+  Flmax: 0
+  angles:
+  - 30
+  - -90
+  ct: 500
+  d: 52000
+  dt0: 0
+  dz0: 0.06
+  plane_coefficients:
+  - 0
+  - 0
+  - 1
+  - 50
+  wave: 0.5670
+  loc_to_fits: 'new_interpolation/plane'
+  composition: 'both'
+
+# 2:
+#   Flmax: 1.0e+16
+#   angles:
+#   - 0
+#   - 360
+#   ct: 500
+#   d: 52000
+#   dt0: 0
+#   dz0: 0.06
+#   plane_coefficients:
+#   - 0
+#   - 0
+#   - 1
+#   - 55
+#   wave: 0.5670
+
+# 3:
+#   Flmax: 1.0e+16
+#   angles:
+#   - 0
+#   - 360
+#   ct: 550
+#   d: 52000
+#   dt0: 0
+#   dz0: 0.06
+#   plane_coefficients:
+#   - 0
+#   - 0
+#   - 1
+#   - 55
+#   wave: 0.5670
+
+# 4:
+#   Flmax: 1.0e+16
+#   angles:
+#   - 0
+#   - 360
+#   ct: 700
+#   d: 52000
+#   dt0: 0
+#   dz0: 0.06
+#   plane_coefficients:
+#   - 0
+#   - 0
+#   - 1
+#   - 55
+#   wave: 0.5670
+
