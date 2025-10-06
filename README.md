@@ -10,7 +10,7 @@ using the `lsst_stack = w_2025_31` on NERSC.
 
 ### First, generate the LE image, and save it as a fits file 
 
-The [repo](https://github.com/taceroc/lightecho_modeling_oop) on branch plane_simple_ners, contains the code to generate the LE.
+The [repo](https://github.com/taceroc/lightecho_modeling_oop) on branch plane_simple_newlogic, contains the code to generate the LE.
 (this doesn't need the lsst_stack)
 ```
 python pipe_le.py SimulateLEInfPlane -file_to_parameters /pscratch/sd/t/taceroc/LE_inj/params_le_new_interpolation.yml --bool_save --no-bool_show_plots -file_to_parameters_surface /pscratch/sd/t/taceroc/LE_inj/name_surface.yml -loc_to_fits /pscratch/sd/t/taceroc/LE_inj/fits
